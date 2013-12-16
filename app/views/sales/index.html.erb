@@ -1,0 +1,25 @@
+<h1>Sales Closed in the past three months:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sale Date:</th>
+      <th>Sale Amount:</th>
+      <th>Invoice #:</th>
+      <th>Units Sold:</th>
+      <th>Price Per Unit:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @closed_sales.each do |sale| %>
+      <tr>
+        <td><%= sale.sale_date %></td>
+        <td><%= sale.sale_amount %></td>
+        <td><%= sale.invoice_no %></td>
+        <td><%= sale.units_sold %></td>
+        <td><%= sale.price_per_unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

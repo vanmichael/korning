@@ -1,0 +1,25 @@
+<h1><%= @employee.name %>'s Employee Profile</h1>
+
+<h3>Email: <%= mail_to @employee.email, @employee.email %></h3>
+
+<h2>Total Sales: <%= @employee.sales.count %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sale Date</th>
+      <th>Sale Amount</th>
+      <th>Invoice</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee.sales.order(sale_amount: :desc).each do |sale| %>
+      <tr>
+        <td><%= sale.sale_date %></td>
+        <td><%= sale.sale_amount %></td>
+        <td><%= sale.invoice_no %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

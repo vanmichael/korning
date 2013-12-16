@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+th {
+	width:90px;
+}
+
+ td {
+ 	width:100px;
+ 	padding-left:15px;
+ }
